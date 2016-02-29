@@ -14,7 +14,7 @@
 
     <script src="src/backbone-model.js"></script>
     <script src="src/app-model.js"></script>
-    <script src="src/app-view.js"></script>
+    <script src="src/todo-view.js"></script>
     <script src="src/app.js"></script>
 
 </head>
@@ -36,5 +36,33 @@
             <div id="todo-stats"></div>
         </div>
     </div>
+    <script type="text/template" id="item-template">
+        <div class="todo <%= done ? 'done' : '' %>">
+            <div class="display">
+                <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+                <label class="todo-content"><%= content %></label>
+                <span class="todo-destroy"></span>
+            </div>
+            <div class="edit">
+                <input class="todo-input" type="text" value="<%= content %>" />
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="stats-template">
+        <% if (total) { %>
+        <span class="todo-count">
+            <span class="number"><%= remaining %></span>
+            <span class="word"><%= remaining == 1 ? 'item' : 'items' %></span> left.
+        </span>
+        <% } %>
+        <% if (done) { %>
+        <span class="todo-clear">
+            <a href="#">
+                Clear <span class="number-done"><%= done %></span>
+                completed <span class="word-done"><%= done == 1 ? 'item' : 'items' %></span>
+            </a>
+        </span>
+        <% } %>
 </body>
 </html>

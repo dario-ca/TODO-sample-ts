@@ -22,11 +22,12 @@
     <Content Include="lib\underscore-min.js" />
     <Content Include="res\css\app.css" />
     <Content Include="index.html" />
+    <Content Include="res\img\destroy.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app-model.ts" />
-    <TypeScriptCompile Include="src\app-view.ts" />
+    <TypeScriptCompile Include="src\todo-view.ts" />
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\backbone-model.ts" />
   </ItemGroup>

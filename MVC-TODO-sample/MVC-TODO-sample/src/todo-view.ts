@@ -11,10 +11,11 @@ class TodoView extends Backbone.View {
         this.events = {
             "click.check": "toggleDone",
             "dblclick label.todo-content": "edit",
-            "click span.todo-destroy": "updateOnEnter",
+            "click span.todo-destroy": "clear",
+            "keypress .todo-input": "updateOnEnter",
             "blur .todo-input": "close"
         }
-        
+
         super(options);
 
         this.template = _.template($('#item-template').html());
@@ -52,4 +53,4 @@ class TodoView extends Backbone.View {
     clear() {
         this.model.clear();
     }
-} 
+}  
