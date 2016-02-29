@@ -3,13 +3,34 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
+    <title>TODO List</title>
+    <link rel="stylesheet" href="res/css/app.css" type="text/css" />
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script src="lib/jquery-1.12.1.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js"></script>
+
     <script src="app.js"></script>
 </head>
 <body>
-    <h1>TypeScript HTML App</h1>
-
-    <div id="content"></div>
+    <div id="todoapp">
+        <div class="title">
+            <h1>TODOs</h1>
+        </div>
+        <div class="content">
+            <div id="create-todo-textfield">
+                <input id="new-todo-input" placeholder="Insert here your todo :)" type="text"/>
+                <span class="ui-tooltip-top" style="display:none;">Press Enter to save this todo</span>
+            </div>
+            <div id="todos">
+                <input class="check mark-all-done" type="checkbox"/>
+                <label for="check-all">Mark all as complete</label>
+                <ul id="todo-list"></ul>
+            </div>
+            <div id="todo-stats"></div>
+        </div>
+    </div>
 </body>
 </html>
