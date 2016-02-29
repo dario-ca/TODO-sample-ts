@@ -25,8 +25,10 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app - Copy.ts" />
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="src\app-model.ts" />
+    <TypeScriptCompile Include="src\app-view.ts" />
+    <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\backbone-model.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

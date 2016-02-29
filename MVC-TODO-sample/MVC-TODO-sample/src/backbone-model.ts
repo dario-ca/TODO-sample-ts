@@ -38,6 +38,7 @@
         static extend: any;
     }
 }
+
 interface JQuery {
     fadeIn(): JQuery;
     fadeOut(): JQuery;
@@ -52,48 +53,18 @@ interface JQuery {
     val(value: string): JQuery;
     attr(attrName: string): string;
 }
+
 declare var $: {
     (el: HTMLElement): JQuery;
     (selector: string): JQuery;
     (readyCallback: () => void): JQuery;
 };
+
 declare var _: {
     each<T, U>(arr: T[], f: (elem: T) => U): U[];
     delay(f: Function, wait: number, ...arguments: any[]): number;
     template(template: string): (model: any) => string;
     bindAll(object: any, ...methodNames: string[]): void;
 };
+
 declare var Store: any;
-
-
-//TODO application
-
-//TODO model
-class Todo extends Backbone.Model {
-
-    //defaults todo attributes
-    defaults() {
-        return {
-            content: "empty todo...";
-            done: false;
-        }
-    }
-
-    //be sure all todos have a content
-    initialize() {
-        if (!this.get("content")) {
-            this.set({ "content": this.defaults().content });
-        };
-    }
-
-    //toggle the done status of this todo
-    toggle() {
-        this.save({ done: !this.get("done") };
-    }
-
-    //remove todo
-    clear() {
-        this.destroy();
-    }
-}
-
